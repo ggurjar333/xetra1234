@@ -1,5 +1,6 @@
 """Xetra ETL Component"""
 from typing import NamedTuple
+import logging
 
 from xetra.common.s3 import S3BucketConnector
 
@@ -72,6 +73,31 @@ class XetraETL():
         :param s3_bucket_src: connection to source S3 bucket
         :param s3_bucket_trg: connection to target S3 bucket
         :param meta_key: used as self.meta_key -> key
+        :param src_args: NamedTuple class with source configuration data
+        :param trg_args: NamedTuple class with target configuration data
         """
+        self._logger = logging.getLogger(__name__)
+        self.s3_bucket_src = s3_bucket_src
+        self.s3_bucket_trg = s3_bucket_trg
+        self.meta_key = meta_key
+        self.src_args = src_args
+        self.trg_args = trg_args
+        self.extract_date = 
+        self.extract_date_list = 
+        self.meta_update_list = 
 
 
+    def extract(self):
+        pass
+
+    
+    def transform_report1(self):
+        pass
+
+
+    def load(self):
+        pass
+
+
+    def etl_report1(self):
+        pass
